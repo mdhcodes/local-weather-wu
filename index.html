@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Local Weather</title>
+    <meta name="description" content="Local Weather">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300,300italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/weather.css">
+  </head>
+  <body>
+    <section class="cloud">
+      <h1>Local Weather</h1>
+      <div id="error"></div>
+      <div id="date"></div>
+      <div id="location"></div>
+      <a href="#" id="convert-temp" title="Click to convert to Fahrenheit">C</a>
+      <div class="data">
+        <div class="weather">
+          <div id="current-temp"></div><span>°</span>
+          <div id="description"></div>
+          <div id="icon"></div>
+        </div><!-- end weather -->
+        <div class="facts">
+          <div id="feels-like"></div><span>°</span>
+          <div id="humidity"></div>
+          <div id="wind-direction"></div>
+        </div><!-- end facts -->
+      </div><!-- end data -->
+    </section><!-- end cloud -->
+    <footer>
+      <div id="credit"></div>
+      <p>© 2016 <a href="http://www.mdhcodes.com/">mdhCodes</a> ♥</p>
+    </footer>
+    <script src="js/moment.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
+</html>
