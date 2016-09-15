@@ -12,25 +12,21 @@
     <link rel="stylesheet" href="css/weather.css">
   </head>
   <body>
-    <section class="cloud">
+    <section class="wrapper cloud">
       <h1>Local Weather</h1>
       <div id="error"></div>
       <div id="date"></div>
       <div id="location"></div>
       <a href="#" id="convert-temp" title="Click to convert to Fahrenheit">C</a>
       <div class="data">
-        <div class="weather">
-          <div id="current-temp"></div><span>°</span>
+          <div id="current-temp"></div>
+          <div id="feels-like"></div>
           <div id="description"></div>
           <div id="icon"></div>
-        </div><!-- end weather -->
-        <div class="facts">
-          <div id="feels-like"></div><span>°</span>
           <div id="humidity"></div>
           <div id="wind-direction"></div>
-        </div><!-- end facts -->
       </div><!-- end data -->
-    </section><!-- end cloud -->
+    </section><!-- end wrapper cloud-->
     <footer>
       <div id="credit"></div>
       <p>© 2016 <a href="http://www.mdhcodes.com/">mdhCodes</a> ♥</p>

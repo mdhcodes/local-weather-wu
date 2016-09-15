@@ -1,6 +1,6 @@
-/* Get the user's current date */
+/* Get the user's current date with MomentJS*/
 
-var dateAndTime = moment().format('dddd') + ', ' + moment().format('MMMM Do YYYY, h:mm a');
+var dateAndTime = moment().format('dddd') + ', ' + moment().format('MMMM Do, YYYY, h:mm a');
 document.getElementById("date").innerHTML = dateAndTime;
 
 
@@ -12,7 +12,6 @@ var getLocation = function() {
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
             getWeather(lat, lon);
-            console.log(lat, lon);
         });
     }
 };
@@ -22,7 +21,7 @@ var getLocation = function() {
 
 var getWeather = function(lat, lon) {
     var req = new XMLHttpRequest();
-    var url = "http://api.wunderground.com/api/0126420f39b48bf0/conditions/q/" + lat + "," + lon + ".json";
+    var url = "https://api.wunderground.com/api/0126420f39b48bf0/conditions/q/" + lat + "," + lon + ".json";
     req.open("GET", url, true);
     req.onload = function(response) {
         if(req.status === 200 && req.statusText === "OK") {
@@ -40,10 +39,10 @@ var getWeather = function(lat, lon) {
             var creditImage = response['current_observation']['image']['url'];
             var creditLink = response['current_observation']['image']['link'];
             document.getElementById("location").innerHTML = location;
-            document.getElementById("current-temp").innerHTML = 'Now: ' + Math.round(tempC);
+            document.getElementById("current-temp").innerHTML = 'Now: ' + Math.round(tempC) + '°';
             document.getElementById("description").innerHTML = description;
             document.getElementById("icon").innerHTML = '<img src=' + icon + '>';
-            document.getElementById("feels-like").innerHTML = 'Feels Like: ' + feelsLikeC;
+            document.getElementById("feels-like").innerHTML = 'Feels Like: ' + Math.round(feelsLikeC) + '°';
             document.getElementById("humidity").innerHTML = 'Humidity: ' + humidity;
             document.getElementById("wind-direction").innerHTML = 'Wind Direction: ' + windDirection;
             document.getElementById("credit").innerHTML = '<img src=' + creditImage + '><p>Weather delivered by: <a href=' + creditLink + 'target="_blank">' + creditTitle + ' API</a></p>';
@@ -66,14 +65,14 @@ var convertTemp = function(tempC, tempF, feelsLikeC, feelsLikeF) {
     var convert = false;
     document.getElementById("convert-temp").onclick = function() {
         if(convert) {
-            document.getElementById("current-temp").innerHTML = 'Now: ' + Math.round(tempC);
-            document.getElementById("feels-like").innerHTML = 'Feels Like: ' + feelsLikeC;
+            document.getElementById("current-temp").innerHTML = 'Now: ' + Math.round(tempC) + '°';
+            document.getElementById("feels-like").innerHTML = 'Feels Like: ' + Math.round(feelsLikeC) + '°';
             document.getElementById("convert-temp").innerHTML = "C";
             document.getElementById("convert-temp").setAttribute("title", "Click to convert to Fahrenheit");
             convert = false;
         } else {
-            document.getElementById("current-temp").innerHTML = 'Now: ' + Math.round(tempF);
-            document.getElementById("feels-like").innerHTML = 'Feels Like: ' + feelsLikeF;
+            document.getElementById("current-temp").innerHTML = 'Now: ' + Math.round(tempF) + '°';
+            document.getElementById("feels-like").innerHTML = 'Feels Like: ' + Math.round(feelsLikeF) + '°';
             document.getElementById("convert-temp").innerHTML = "F";
             document.getElementById("convert-temp").setAttribute("title", "Click to convert to Celcius");
             convert = true;
