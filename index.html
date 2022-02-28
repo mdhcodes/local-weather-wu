@@ -8,28 +8,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300,300italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/weather.css">
   </head>
-  <body>
-    <section class="wrapper cloud">
-      <h1>Local Weather</h1>
-      <div id="error"></div>
-      <div id="date"></div>
-      <div id="location"></div>
-      <a href="#" id="convert-temp" title="Click to convert to Fahrenheit">C</a>
-      <div class="data">
-          <div id="current-temp"></div>
-          <div id="feels-like"></div>
+  <body id="body">
+
+    <div id="container" class="container">    
+       <h1>Weather</h1>
+       <div id="error"></div>
+       <div id="location"></div>
+       <div id="date"></div>
+
+        <div class="weather">   
+          
+          <div class="temp">
+            <div id="icon"></div>
+            <div id="current-temp"></div>
+            <button id="convert-temp" title="Click to convert to Celcius">F</button>
+          </div><!--</div>end temp-->
+
           <div id="description"></div>
-          <div id="icon"></div>
-          <div id="humidity"></div>
-          <div id="wind-direction"></div>
-      </div><!-- end data -->
-    </section><!-- end wrapper cloud-->
+
+        </div><!-- end weather -->   
+    </div><!-- end container -->   
+
     <footer>
       <div id="credit"></div>
-      <p>© 2016 <a href="http://www.mdhcodes.com/">mdhCodes</a> ♥</p>
+      <div id="credit-img"></div>
+      <div id="design"></div>
+      <p>© 2022 <a href="http://www.mdhcodes.com/">mdhCodes</a> ♥</p>
     </footer>
     <script src="js/moment.js"></script>
     <script src="js/weather.js"></script>
