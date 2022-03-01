@@ -61,12 +61,12 @@ const convertTemp = function(tempF) {
 const getWeather = (url) => {
     fetch(url)
         .then(response => {
-            if (response.status === 200 && response.statusText === "OK") {
+            // if (response.status === 200 && response.statusText === "OK") {
                 return response.json();
-            } else {
-                const errorMessage = document.getElementById('error');
-                errorMessage.textContent = 'An error occurred: Please refresh the page.'
-            }
+            // } else {
+                // const errorMessage = document.getElementById('error');
+                // errorMessage.textContent = 'An error occurred: Please refresh the page.'
+            // }
         })
         .then(response => {
             const currentTemp = document.getElementById('current-temp');
